@@ -1,0 +1,2 @@
+This error is telling us that we used the method calculate_product
+with one argument when it was expecting two arguments.

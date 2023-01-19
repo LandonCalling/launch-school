@@ -1,0 +1,7 @@
+Exception handling allows you to handle errors in a manageable
+and predictable way.  In the real world, you don't want your 
+app to stop running because one of your users put in bad info,
+or pressed the wrong button.  This allows you to catch the error
+that would normally stop the app from running and print to the 
+screen a bunch of what would look like garbage to an end user 
+and replace it with a readable message.
