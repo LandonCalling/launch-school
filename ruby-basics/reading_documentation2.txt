@@ -1,0 +1,5 @@
+1. var = "xyz".upcase
+2. a.insert(3, 5, 6, 7)
+3. a. ['abc', 'def', 'ghi,jkl', 'mno', 'pqr,stu', 'vwx', 'yz'] 
+   b. ['abc def ghi', 'jkl mno pqr', 'stu vwx yz']
+   c. ['abc def ghi', 'jkl mno pqr,stu vwx yz']

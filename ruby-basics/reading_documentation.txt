@@ -1,0 +1,11 @@
+1. ruby-doc.com or docs.ruby-lang.org
+2. https://docs.ruby-lang.org/en/2.7.0/syntax/control_expressions_rdoc.html#label-while+Loop
+3. The while loop returns nil unless a break is used to supply a value.
+4. break accepts a value that supplies the result of the expression it is
+   breaking out of if it doesn't have an expression associated with it, it
+   returns nil.
+5. you can use underscores in place of commas to make large number easier
+   to read, in fact you can place underscores anywhere in the number.
+6. :Landon
+7. https://docs.ruby-lang.org/en/2.7.0/String.html
+8. #rjust
