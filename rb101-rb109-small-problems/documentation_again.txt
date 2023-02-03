@@ -1,0 +1,28 @@
+1. File::path is a class method and returns a string representation of the
+   file path. This class method is called on the File class itself.
+   File#path is an instance method and returns the pathname used to create
+   the file as a string.  It also does some error checking. This instance
+   is called on the file object that the programmer creates.
+
+2. a. 4712-01-01
+   b. 2016-01-01 
+   c. 2016-05-01
+   d. 2016-05-13
+
+3. [4, 5, 3, 6]
+
+4. a.bsearch{ |num| num > 8 }
+
+5. a. IndexError: index 7 outside of array bounds
+   b. beats me
+   c. 49
+
+
+6. 5 
+   8
+
+7. puts s.public_methods(false).inspect
+
+8. puts a.min(2)
+
+9. https://ruby-doc.org/2.7.7/exts/psych/Psych.html
