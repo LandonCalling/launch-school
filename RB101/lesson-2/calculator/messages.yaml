@@ -1,0 +1,51 @@
+welcome:
+  - "Welcome to Calculator. Please choose your language:"
+  - "Willkommen beim Rechner. Bitte wählen Sie Ihre Sprache:"
+languages:
+  - "Enter 'en' for English"
+  - "Geben Sie 'de' für Deutsch ein."
+invalid_language:
+  - "That is not a valid selection.  Please try again."
+  - "Das ist keine gültige Auswahl. Bitte versuche es erneut."
+en:
+  name_entry: "Please enter your name:"
+  invalid_name: "Must enter a name, and it cannot be whitespace.  Please try again."
+  greeting: "Hi "
+  number:
+    - "Please enter the first number:"
+    - "Please enter the second number:"
+  invalid_number: "That is not a valid number. Please try again."
+  ops: "Which operation would you like to perform?\n 1) addition\n 2) subtraction\n 3) multiplication\n 4) division"
+  invalid_op: "That is not a valid selection. Only 1, 2, 3, or 4 are valid choices.  Please try again."
+  zero_divison: "You selected division, and your second number is 0. This would result in division by zero.  Please start again."
+  operators:
+    - "Adding"
+    - "Subtracting"
+    - "Multiplying"
+    - "Dividing"
+  processing: " the two numbers..."
+  result: "The result is "
+  do_again: "Do you want to do this again? (y for yes, n for no)"
+  invalid_answer: "That is not a valid selection. Please try again."
+  goodbye: "Thank you for using Calculator! Goodbye."
+de:
+  name_entry: "Bitte geben Sie Ihren Namen ein:"
+  invalid_name: "Es muss ein Name eingegeben werden und darf kein Leerzeichen sein. Bitte versuche es erneut."
+  greeting: "Hallo "
+  number:
+    - "Bitte geben Sie die erste Zahl ein:"
+    - "Bitte geben Sie die zweite Zahl ein:"
+  invalid_number: "Das ist keine gültige Zahl. Bitte versuche es erneut."
+  ops: "Welche Operation möchten Sie durchführen?\n 1) Addition\n 2) Subtraktion\n 3) Multiplikation\n 4) Division"
+  invalid_op: "Das ist keine gültige Auswahl. Nur 1, 2, 3 oder 4 sind gültige Auswahlmöglichkeiten. Bitte versuche es erneut."
+  zero_divison: "Sie haben Division gewählt und Ihre zweite Zahl ist 0. Dies würde zu einer Division durch Null führen. Bitte neu starten."
+  operators:
+    - "Addition"
+    - "Subtrahieren"
+    - "Multiplizieren"
+    - "Dividieren"
+  processing: " der beiden Zahlen..."
+  result: "Das Ergebnis ist "
+  do_again: "Möchten Sie dies wiederholen? (j für ja, n für nein)"
+  invalid_answer: "Das ist keine gültige Auswahl. Bitte versuche es erneut."
+  goodbye: "Vielen Dank, dass Sie den Rechner verwenden! Auf Wiedersehen."

@@ -1,0 +1,20 @@
+
+---------------- Problem
+Restate Problem:
+
+Input: 
+
+Output: 
+
+Rules: 
+
+---------------- Modelling / Examples
+
+
+---------------- Data Structures
+
+
+---------------- Scratchpad
+
+
+---------------- Algorithm

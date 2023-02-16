@@ -1,0 +1,70 @@
+---------------- Problem
+Restate Problem: write a calculator program that asks a user for two numbers 
+and asks the user whether they would like to add, subtract, multiply or divide,
+and then perform that operation.
+
+Input: two numbers, operator
+
+Output: result of operation
+
+Rules: 
+  - must be able to handle floats as well as integers
+  - must put all screen output in a separate yaml file
+  - must translate screen output to at least one other language
+  - must improve on number validation
+  - must look out for division by zero
+   
+---------------- Modelling / Examples
+
+2, 3, + => 5.00
+2., .5, * => 1.00
+2.5, 3, - => -0.50
+-4, ,2 / => -2.00
+11, 5, + => 16.00
+12.5, 2, * => 25.00
+3.55, 4.61, + => 8.16
+
+
+---------------- Data Structures
+Use regex for number validation
+use array to store number inputs from user
+use hash to store messages for screen output (in yaml file)
+
+---------------- Scratchpad
+
+
+---------------- Algorithm
+- Read in calculator messages file and store as variable
+- Welcome and Language selection
+  - welcome the user
+  - output to screen possible languages
+  - ask user for language selection
+  - user inputs selection
+  - verify selection is in list of possible choices
+  - if not valid selection output error message and do again
+  - return user choice
+- get a number from the user (twice)
+  - ask user to input a number
+  - user inputs number
+  - verify that it is a valid number
+  - if not valid output error message and do again
+  - return number
+- get operation from the user
+  - output to screen possible operation choices
+  - ask user for operation selection
+  - user inputs selection
+  - verify selection is in list of possible choices
+  - if not valid selection output error message and do again
+  - return operation choice
+- if the user chose division, check second number
+  - if second number is zero go back to start and ask for two numbers again
+- perform operation
+  - add, subtract, multiply or divide
+  - return result
+- output to the screen
+  - format result so that it only has 2 decimal points
+- Do they want to try again?
+  - ask user if they want to try again
+  - user inputs answer
+  - verify that it is a valid answer
+- Break unless they want to try again
