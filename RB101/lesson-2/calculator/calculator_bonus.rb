@@ -10,19 +10,19 @@ def prompt(message)
   puts "=> #{message}"
 end
 
-def get_language()
+def get_language
   MESSAGES['welcome'].each { |string| prompt(string) }
   answer = ''
-  
+
   loop do
     MESSAGES['languages'].each { |string| prompt(string) }
     answer = gets.chomp.downcase
-    
+
     break if valid_language?(answer)
-    
+
     MESSAGES['invalid_language'].each { |string| prompt(string) }
   end
-  
+
   answer
 end
 
@@ -32,20 +32,20 @@ end
 
 def get_name(language)
   name = ''
-  
+
   loop do
     prompt(MESSAGES[language]['name_entry'])
     name = gets.chomp
-    
+
     break if valid_name?(name)
-    
+
     prompt(MESSAGES[language]['invalid_name'])
   end
-  
+
   prompt(MESSAGES[language]['greeting'] + name + '!')
 end
 
-# The regex in the following method looks for a string containing only 
+# The regex in the following method looks for a string containing only
 # one or more whitespace characters.
 
 def valid_name?(string)
@@ -54,16 +54,16 @@ end
 
 def get_number(language, index)
   answer = ''
-  
+
   loop do
     prompt(MESSAGES[language]['number'][index])
     answer = gets.chomp
-    
+
     break if valid_number?(answer)
-    
+
     prompt(MESSAGES[language]['invalid_number'])
   end
-  
+
   answer.to_f
 end
 
@@ -71,7 +71,7 @@ def valid_number?(number)
   valid_integer?(number) || valid_float?(number)
 end
 
-# the regex in the following method looks for a string that contains 
+# the regex in the following method looks for a string that contains
 # only digits and an optional single dash at the beginning of the string
 
 def valid_integer?(num)
@@ -98,16 +98,16 @@ end
 
 def get_operator(language)
   answer = ''
-  
+
   loop do
     prompt(MESSAGES[language]['ops'])
     answer = gets.chomp
-    
+
     break if valid_operator?(answer)
-    
+
     prompt(MESSAGES[language]['invalid_op'])
   end
-  
+
   answer.to_i
 end
 
@@ -132,16 +132,16 @@ end
 
 def get_do_again_response(language)
   answer = ''
-  
+
   loop do
     prompt(MESSAGES[language]['do_again'])
     answer = gets.chomp.downcase
-    
+
     break if valid_answer?(answer)
-    
+
     prompt(MESSAGES[language]['invalid_answer'])
   end
-  
+
   answer
 end
 
@@ -162,23 +162,24 @@ get_name(language)
 loop do
   numbers = Array.new(2)
   operator = nil
-  
+
   loop do
     2.times { |i| numbers[i] = get_number(language, i) }
     operator = get_operator(language)
-    
+
     break unless division_by_zero?(operator, numbers)
-    
+
     prompt(MESSAGES[language]['zero_divison'])
   end
-  
-  prompt(MESSAGES[language]['operators'][operator - 1] + MESSAGES[language]['processing'])
-  
+
+  prompt(MESSAGES[language]['operators'][operator - 1] +
+         MESSAGES[language]['processing'])
+
   result = calc_result(operator, numbers)
-  result = sprintf("%.2f", result)
+  result = format("%.2f", result)
   prompt(MESSAGES[language]['result'] + result + ".")
   answer = get_do_again_response(language)
-  
+
   if do_again?(answer)
     system("clear") || system("cls")
   else
