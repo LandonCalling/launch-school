@@ -1,4 +1,5 @@
 RESPONSES = %w(y yes n no)
+AFFIRMATIVE = %w(y yes)
 
 def prompt(message)
   puts "=> #{message}"
@@ -131,7 +132,7 @@ def valid_do_again_response(string)
 end
 
 def do_again?(string)
-  string.start_with?('y')
+  AFFIRMATIVE.include?(string)
 end
 
 # Main
