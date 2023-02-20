@@ -1,0 +1,89 @@
+---------------- Problem
+Restate Problem: Build a mortgage calculator that takes three inputs: loan
+amount, APR, and loan duration.  Calculate the monthly payment using the
+following formula:
+
+m = p * (j / (1 - (1 + j)**(-n)))
+
+m = monthly payment
+p = loan amount
+j = monthly interest rate
+n = loan duration in months
+
+Input: 
+  - loan amount
+  - annual percentage rate (APR) (in % form not decimal form)
+  - loan duration (in years)
+
+Output: 
+  - monthly payment
+
+Rules: 
+  - need to calc monthly interest rate from APR
+  - need to calculate loan duration in months from input of loan duration
+    in years
+  - need to verify all inputs
+
+---------------- Modelling / Examples
+100_000, 5, 30 => 536.82
+300_000, 4.5, 25 => 1667.50
+250_000, 2.5, 30.5 => 976.93
+
+Verification Tests:
+  - loan amount input
+    - rules:
+      - loan amount must be a number (no letters, other chars but period)
+      - loan amount must be positive
+      - loan amount must be non zero
+  - APR input
+    - rules:
+      - APR must be a number (no letters, other chars but period)
+      - APR must be a positive number between 0-30e inclusive
+  - loan duration input
+    - rules:
+      - loan duration must be either an integer or a float that ends
+        in .5
+      - 
+
+---------------- Data Structures
+
+
+---------------- Scratchpad
+
+
+---------------- Algorithm
+- Welcome
+- Get loan amount
+  - ask user how much the loan amount is
+  - get user input
+  - verify input is valid input
+  - try again unless valid
+  - return loan amount
+- Get APR
+  - ask user how much the apr is
+  - get user input
+  - verify input is valid input
+  - try again unless valid
+  - return APR
+- Get loan duration in years
+  - ask user what the loan duration is in years
+  - get user input
+  - verify input is valid input
+  - try again unless valid input
+  - return loan duration in years
+- calculate monthly interest rate
+  - apr / 12
+- calculate loan duration in months
+  - loan duration in years * 12
+- calculate monthly payment
+  - input montly interest rate, loan amount, and loan duration in months
+  - calculate monthly payment
+  - return monthly payment
+- print results
+- Ask the user if they would like to try again
+  - ask the user if they would like to try again
+  - get user input
+  - verify input is valid input
+  - return answer
+- Break unless they want to try again.
+- Thanks and goodbye
