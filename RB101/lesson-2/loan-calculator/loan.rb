@@ -13,7 +13,7 @@ def get_loan_amt
 
     break if valid_loan_amt?(loan_amt)
 
-    prompt("Must enter a positive non-zero number for loan amount. " +
+    prompt("Must enter a positive non-zero number for loan amount. " \
            "Please try again.")
   end
 
@@ -28,7 +28,7 @@ def get_apr
   rate = ''
 
   loop do
-    prompt("Please enter the Annual Percentage Rate (APR) of the loan " +
+    prompt("Please enter the Annual Percentage Rate (APR) of the loan " \
            "as a percentage:")
     prompt("e.g. if your APR is 4.5% then you would enter 4.5 and not .045")
     rate = gets.chomp
@@ -86,7 +86,7 @@ def get_loan_duration
 
     break if valid_duration?(loan_dur)
 
-    prompt("Must be a positive non-zero number rounded to the nearest half " +
+    prompt("Must be a positive non-zero number rounded to the nearest half " \
            "year.  Please try again.")
   end
 
@@ -114,7 +114,7 @@ def get_do_again_response
   answer = ''
 
   loop do
-    prompt("Would you like to calculate another loan payment? " +
+    prompt("Would you like to calculate another loan payment? " \
            "(y for yes, n for no)")
     answer = gets.chomp.downcase
 
@@ -150,7 +150,7 @@ loop do
   monthly_payment = calc_monthly_payment(loan_amount,
                                          monthly_interest_rate,
                                          loan_duration_in_months)
-                                         
+
   prompt("Your monthly payment will be #{monthly_payment}")
   answer = get_do_again_response
 
