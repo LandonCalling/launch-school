@@ -151,8 +151,13 @@ loop do
   monthly_payment = calc_monthly_payment(loan_amount,
                                          monthly_interest_rate,
                                          loan_duration_in_months)
+  monthly_payment = format('%.2f', monthly_payment)
 
-  prompt("Your monthly payment will be #{monthly_payment}")
+  prompt("With a loan amount of $#{loan_amount},")
+  prompt("And an APR of #{apr * 100}%,")
+  prompt("And a loan duration of #{loan_duration_in_years} years,")
+  prompt("Your monthly payment will be $#{monthly_payment}.")
+
   answer = get_do_again_response
 
   break unless do_again?(answer)
