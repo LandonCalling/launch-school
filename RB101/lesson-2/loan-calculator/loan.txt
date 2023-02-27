@@ -66,11 +66,17 @@ Verification Tests:
   - try again unless valid
   - return APR
 - Get loan duration in years
-  - ask user what the loan duration is in years
+  - ask user what the loan duration is in years (integer)
   - get user input
   - verify input is valid input
+    - positive integer
   - try again unless valid input
-  - return loan duration in years
+  - ask user what the loan duration is in months (integer)
+  - get user input
+  - verify input is valid input
+    - positive integer
+  - try again unless valid input
+  - return loan duration
 - calculate monthly interest rate
   - apr / 12
 - calculate loan duration in months
