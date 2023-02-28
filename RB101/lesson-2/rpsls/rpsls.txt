@@ -1,0 +1,61 @@
+
+---------------- Problem
+Restate Problem:
+
+Input:
+  - user choice input
+
+Output:
+  - computer choice
+  - who won
+  - score
+
+Rules: 
+  - Five possible choices: Rock, Paper, Scissors, Lizard, Spock
+  - Win conditions:
+    - Rock: Scissors, Lizard
+    - Paper: Rock, Spock
+    - Scissors: Paper, Lizard
+    - Spock: Scissors, Rock
+    - Lizard: Spock, Paper
+  - Use abbreviations for user entry
+  - keep score
+    - three winning rounds wins the game
+
+---------------- Modelling / Examples
+
+
+---------------- Data Structures
+- hash for keeping track of winning moves
+- hash for mapping abreviations to words
+- hash for score
+
+---------------- Scratchpad
+
+
+---------------- Algorithm
+- Welcome
+- Get user choice
+  - Display user options
+  - user chooses
+  - valid choice?
+    - if not display error message and do again
+    - otherwise break
+- Computer chooses
+- Display user and computer choices
+- determine winner
+  - compare computer choice and user choice
+    - display winner
+    - increment score
+- Display score
+- end game if someone won three rounds or do again
+- determine grand winner
+  - is player at three points or is the computer
+- display grand winner
+- play again?
+  - Ask if user wants to do again
+  - user enters choice
+  - valid choice?
+    - if not display error message and do again
+    - otherwise break
+- goodbye
