@@ -5,19 +5,19 @@ AFFIRMATIVE = %w(y yes)
 VALID_CHOICE = %w(r p s l sp)
 MAX_SCORE = 3
 WINNING_MOVES = {
-                  :r  => %w(s l),
-                  :p  => %w(r sp),
-                  :s  => %w(p l),
-                  :sp => %w(s r),
-                  :l  => %w(sp p)
-                }
+  r: %w(s l),
+  p: %w(r sp),
+  s: %w(p l),
+  sp: %w(s r),
+  l: %w(sp p)
+}
 CHOICE_MAP = {
-               :r  => 'rock',
-               :p  => 'paper',
-               :s  => 'scissors',
-               :sp => 'spock',
-               :l  => 'lizard',
-             }
+  r: 'rock',
+  p: 'paper',
+  s: 'scissors',
+  sp: 'spock',
+  l: 'lizard'
+}
 
 MESSAGES = YAML.load_file("rpsls.yaml")
 
@@ -27,16 +27,16 @@ end
 
 def get_user_choice
   choice = ''
-  
+
   loop do
-    MESSAGES["user_choices"].each{ |string| prompt(string) }
+    MESSAGES["user_choices"].each { |string| prompt(string) }
     choice = gets.chomp.downcase
-    
+
     break if valid_choice?(choice)
-    
+
     prompt(MESSAGES["invalid_user_choice"])
   end
-  
+
   choice
 end
 
@@ -76,16 +76,16 @@ end
 
 def get_play_again_response
   answer = ''
- 
+
   loop do
     prompt(MESSAGES["play_again"])
     answer = gets.chomp.downcase
-    
+
     break if valid_play_again_response?(answer)
-    
+
     prompt(MESSAGES["invalid_play_again"])
   end
-  
+
   answer
 end
 
@@ -109,40 +109,36 @@ prompt(MESSAGES["rule_1"])
 prompt(MESSAGES["rule_2"])
 
 loop do
-  scores = { :player => 0, :computer => 0 }
+  scores = { player: 0, computer: 0 }
 
   loop do
     choice = get_user_choice
     computer_choice = VALID_CHOICE.sample
     winner = determine_winner(choice, computer_choice)
-    
+
     prompt(MESSAGES["user"] + "#{CHOICE_MAP[choice.to_sym]}.")
     prompt(MESSAGES["comp"] + "#{CHOICE_MAP[computer_choice.to_sym]}.")
-    
+
     display_winner(winner)
     scores[winner.to_sym] += 1 unless winner == 'tie'
-    
-    prompt(
-           format(
-                  MESSAGES["score"], 
-                  player:  scores[:player], 
-                  computer: scores[:computer]
-                 )
-          )
-    
+
+    prompt(format(MESSAGES["score"],
+                  player: scores[:player],
+                  computer: scores[:computer]))
+
     break if max_score_reached?(scores)
-    
+
     prompt(MESSAGES["continue"])
     gets
-    
+
     system("clear") || system("cls")
   end
-  
+
   display_grand_winner(scores)
   answer = get_play_again_response
-  
+
   break unless do_again?(answer)
-  
+
   system("clear") || system("cls")
 end
 
