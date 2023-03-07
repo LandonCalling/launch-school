@@ -1,0 +1,1 @@
+99.times { |num| puts num + 1 if (num + 1).even? }
