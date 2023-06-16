@@ -1,0 +1,12 @@
+- What is it?
+  - A development evironment like Amazon's cloud9.
+  - Hosted by GitHub in a Docker container running on a virtual machine.
+  - Virtual Machine types
+    - processer choices - 2 up to 32 cores
+    - ram choices - 8 up to 64 GB
+    - storage choices - 32 up to 128 GB
+  - Default setup is Ubuntu Linux
+    - options for other linux distributions
+    - can configure it to suit your needs
+    - 
+- 

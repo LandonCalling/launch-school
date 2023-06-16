@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "9d10ce02ec92c665",
+    "type": "split",
+    "children": [
+      {
+        "id": "716a02456198ec6b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f686cf2bc9fca0a2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "2dfe8ef4752861f7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Prep and Core curriculum.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a97b94f0e16dea51",
+    "type": "split",
+    "children": [
+      {
+        "id": "2dcace9dc5ad0454",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3812370e5ca66b47",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "28077b206bdc0650",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7864b58785b11efe",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "25d980e4a274e193",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6f88db70771dbbbc",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bf761d3c3a76faf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e77334ced201a7b9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Prep and Core curriculum.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "79b9f6c717022f43",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Prep and Core curriculum.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6387ec60d8637bbf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5f2bad2fca032b4a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Prep and Core curriculum.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "2dfe8ef4752861f7",
+  "lastOpenFiles": [
+    "Collection Basics.md",
+    "Medium Articles/Setting up GitHub CodeSpaces for use with the Prep and Core curriculum.md",
+    "Medium Articles",
+    "RB110"
+  ]
+}
