@@ -1,48 +1,39 @@
 {
   "main": {
-    "id": "9d10ce02ec92c665",
+    "id": "c13f2e9c0dbbc54e",
     "type": "split",
     "children": [
       {
-        "id": "716a02456198ec6b",
+        "id": "5b599ecd08637422",
         "type": "tabs",
         "children": [
           {
-            "id": "f686cf2bc9fca0a2",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "2dfe8ef4752861f7",
+            "id": "0bf1724041f5722b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Ruby Prep and Core Curriculum.md",
+                "file": "RB110/lesson-2/Working with Blocks.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "a97b94f0e16dea51",
+    "id": "f6bf8b205869b056",
     "type": "split",
     "children": [
       {
-        "id": "2dcace9dc5ad0454",
+        "id": "966c661aaefc3c76",
         "type": "tabs",
         "children": [
           {
-            "id": "3812370e5ca66b47",
+            "id": "9106dc824858094a",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -52,7 +43,7 @@
             }
           },
           {
-            "id": "28077b206bdc0650",
+            "id": "925543e25a5e051a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,18 +58,10 @@
             }
           },
           {
-            "id": "7864b58785b11efe",
+            "id": "14084942d47330c5",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
-            }
-          },
-          {
-            "id": "25d980e4a274e193",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
               "state": {}
             }
           }
@@ -89,20 +72,20 @@
     "width": 300
   },
   "right": {
-    "id": "6f88db70771dbbbc",
+    "id": "b65a4e62eb9e78c0",
     "type": "split",
     "children": [
       {
-        "id": "1bf761d3c3a76faf",
+        "id": "63ae7ff4e2f80fac",
         "type": "tabs",
         "children": [
           {
-            "id": "e77334ced201a7b9",
+            "id": "94c113aa6ed95c0a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Ruby Prep and Core Curriculum.md",
+                "file": "RB110/lesson-2/Working with Blocks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,19 +97,19 @@
             }
           },
           {
-            "id": "79b9f6c717022f43",
+            "id": "8d81d074857739d5",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Ruby Prep and Core Curriculum.md",
+                "file": "RB110/lesson-2/Working with Blocks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "6387ec60d8637bbf",
+            "id": "cefa16b10461ccac",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,12 +120,12 @@
             }
           },
           {
-            "id": "5f2bad2fca032b4a",
+            "id": "ea192eec849e041c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Medium Articles/Setting up GitHub CodeSpaces for use with the Ruby Prep and Core Curriculum.md"
+                "file": "RB110/lesson-2/Working with Blocks.md"
               }
             }
           }
@@ -163,11 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2dfe8ef4752861f7",
+  "active": "0bf1724041f5722b",
   "lastOpenFiles": [
-    "Collection Basics.md",
-    "Medium Articles/Setting up GitHub CodeSpaces for use with the Ruby Prep and Core Curriculum.md",
-    "Medium Articles",
-    "RB110"
+    "RB110/lesson-2/Working with Blocks.md",
+    "Untitled.md",
+    "RB110/lesson-2/Untitled.md"
   ]
 }
