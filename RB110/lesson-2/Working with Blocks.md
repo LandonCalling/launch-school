@@ -2,13 +2,13 @@ Example 3
 
 Line | Action | Object | Side Effect | Return Value | Is Return Value Used?
 ---|---|---|---|---|---
-1 | method call (map) | The outer array | none | new array \[1, 3] | No
+1 | method call (map) | The outer array | none | new array ``[1, 3]`` | No
 1-4 | block execution | Each sub-array | outputs the first element of each sub array | The first element of the sub-array | Yes, used by map for transformation
 2 | method call (first) | Each sub-array | none | Element at index 0 of sub-array | Yes, used by puts
 2 | method call (puts) | Each sub-array | Outputs a string representation of an integer | nil | No
 4 | method call (first) | Each sub-array | none | Element at index 0 of sub-array | Yes, used to determine return value of block
 
-On line `1` we are calling the `map` method on the multi-dimensional array ``[[1, 2], [3, 4]]``.  The do-end structure on lines `1-4` defines a block, and is passed each sub-array as the argument `arr`.  On line `2` we are calling the `first` method on the argument `arr`.  This returns the first element of the sub-array.  Then the `puts` method is called using the return value of the `first` method.  This outputs the string representation of the first integer in the array.  It then returns nil.  Then on line three we call the `first` method on the `arr` argument.  This returns the first element of the sub-array, which is used by the block as the return value.  The map method will then output a new array ``[1, 3]``.
+On line `1` we are calling the `map` method on the multi-dimensional array ``[[1, 2], [3, 4]]``.  The `do-end` structure on lines `1-4` defines a block, and is passed each sub-array as the argument `arr`.  On line `2` we are calling the `first` method on the argument `arr`.  This returns the first element of the sub-array.  Then the `puts` method is called using the return value of the `first` method.  This outputs the string representation of the first integer in the array.  It then returns nil.  Then on line three we call the `first` method on the `arr` argument.  This returns the first element of the sub-array, which is used by the block as the return value.  The map method will then output a new array ``[1, 3]``.
 
 Example 4
 
