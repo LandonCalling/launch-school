@@ -1,0 +1,17 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/flexwie/devcontainer-features/op:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"groksrc.ruby",
+				"rebornix.ruby",
+				"wingrunr21.vscode-ruby",
+				"castwide.solargraph",
+				"misogi.ruby-rubocop"
+			]
+		}
+	}
+}
