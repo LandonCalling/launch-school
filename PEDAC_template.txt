@@ -1,6 +1,6 @@
 =begin
 ---------------- Problem
-Restate Problem:
+Restate Problem: 
 
 Input: 
 
