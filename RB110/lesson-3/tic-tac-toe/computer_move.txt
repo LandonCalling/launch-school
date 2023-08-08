@@ -1,0 +1,31 @@
+=begin
+---------------- Problem
+Restate Problem: Create a computer AI for the tic tac toe game.
+
+Input: board hash
+
+Output: none
+
+Rules: 
+  - Computer AI Rules (in order of precedence)
+    - Pick Winning move
+    - Defend
+    - Pick Square 5
+    - Pick random Square
+
+Assumptions: 
+
+---------------- Modelling / Examples
+
+
+---------------- Data Structures
+Winning lines nested array
+
+---------------- Scratchpad
+
+
+---------------- Algorithm
+- If there is a possible win - pick that square
+- Else if opponent has a possible win - pick that square
+
+=end
