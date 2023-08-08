@@ -57,6 +57,7 @@ def game_intro
   prompt("First one to #{MAX_SCORE} wins")
 end
 
+# rubocop:disable Naming/AccessorMethodName
 def get_player_name
   name = ''
 
@@ -72,6 +73,7 @@ def get_player_name
 
   name
 end
+# rubocop:enable Naming/AccessorMethodName
 
 # The regex in the following method looks for a string containing only
 # one or more whitespace characters.
@@ -389,6 +391,7 @@ def display_game_winner(player, dealer)
   prompt("#{winner} wins the game!")
 end
 
+# rubocop:disable Naming/AccessorMethodName
 def get_player_play_again_choice
   answer = ''
 
@@ -404,6 +407,7 @@ def get_player_play_again_choice
 
   answer
 end
+# rubocop:enable Naming/AccessorMethodName
 
 def valid_play_again_response?(string)
   PLAYER_CHOICES.include?(string)
