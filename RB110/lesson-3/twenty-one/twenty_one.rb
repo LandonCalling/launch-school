@@ -1,5 +1,7 @@
+require 'yaml'
+
 CARD_VALUES = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
-SUITS = [:hearts, :spades, :diamonds, :clubs]
+SUITS = %w(hearts clubs diamonds spades)
 DEALER_STAY_MIN = 17
 MAX_SCORE = 5
 MAX_HAND = 21
@@ -7,36 +9,8 @@ MOVES = %w(h s hit stay)
 STAY = %w(s stay)
 PLAYER_CHOICES = %w(y n yes no)
 AFFIRMATIVE = %w(y yes)
-HEART_CARD = [
-  '|  _ _  |  ',
-  '| ( V ) |  ',
-  '|  \ /  |  ',
-  '|   V   |  '
-]
-CLUB_CARD = [
-  '|   _   |  ',
-  '|  ( )  |  ',
-  "| (_'_) |  ",
-  '|   |   |  '
-]
-DIAMOND_CARD = [
-  '|   .   |  ',
-  '|  / \  |  ',
-  '|  \ /  |  ',
-  '|   V   |  '
-]
-SPADE_CARD = [
-  '|   .   |  ',
-  '|  /.\  |  ',
-  '| (_._) |  ',
-  '|   |   |  '
-]
-UNK_CARD = [
-  '|  / \  |  ',
-  '|    /  |  ',
-  '|   |   |  ',
-  '|   .   |  '
-]
+MESSAGES = YAML.load_file('messages.yaml')
+CARD_ART = YAML.load_file('card_art.yaml')
 
 def prompt(message)
   puts "=> #{message}"
@@ -45,19 +19,17 @@ end
 def game_intro
   system('clear') || system('cls')
   prompt('Welcome to Twenty One!')
-  prompt('In this game you will be playing against the dealer')
+  prompt('In this game you will be playing against the dealer.')
   prompt('At the start of each round, ' \
-         'you and the dealer will each be dealt 2 cards')
-  prompt('Player goes first, and can either hit or stay')
-  prompt("If either you or the dealer get over #{MAX_HAND} you bust")
-  prompt('At the end of each round the hand score will be compared')
+         'you and the dealer will each be dealt 2 cards.')
+  prompt('Player goes first, and can either hit or stay.')
+  prompt("If either you or the dealer get over #{MAX_HAND} you bust.")
+  prompt('At the end of each round the hand score will be compared.')
   prompt('Whomever has the highest hand score without going over ')
-  prompt('Will get a point and win the round')
-  prompt('Ties go to the player')
-  prompt("First one to #{MAX_SCORE} wins")
+  prompt('Will get a point and win the round.')
+  prompt("First one to #{MAX_SCORE} wins.")
 end
 
-# rubocop:disable Naming/AccessorMethodName
 def get_player_name
   name = ''
 
@@ -73,10 +45,8 @@ def get_player_name
 
   name
 end
-# rubocop:enable Naming/AccessorMethodName
 
-# The regex in the following method looks for a string containing only
-# one or more whitespace characters.
+# regex Looks for a string containing only one or more whitespace characters.
 
 def valid_name?(string)
   !(string.empty? || /^\s+$/.match?(string))
@@ -90,24 +60,12 @@ def deal_card!(deck, number=1)
   deck.shift(number)
 end
 
-# The initialize_round! method will mutate the following:
-# - Player hand
-# - Player hand total
-# - Dealer hand
-# - Dealer hand total
-# This method also uses the deal_card! method which will mutate the deck.
-
 def initialize_round!(player, dealer, deck)
   player[:hand] += deal_card!(deck, 2)
   dealer[:hand] += deal_card!(deck, 2)
   player[:hand_total] = calculate_total(player[:hand])
   dealer[:hand_total] = calculate_total(dealer[:hand])
 end
-
-# The player_turn! method will mutate the following:
-# - Player hand
-# - Player hand total
-# This method also uses the deal_card! method which will mutate the deck.
 
 def player_turn!(player, dealer, deck)
   loop do
@@ -144,7 +102,7 @@ end
 def display_dealer_hand(hand, turn)
   if turn == 'player'
     hand = hand.map(&:clone)
-    hand[0] = [:unknown, '?']
+    hand[0] = ['unknown', '?']
   end
 
   display_hand(hand)
@@ -187,7 +145,7 @@ def create_card_middle(hand, line)
   string = ''
 
   hand.each do |suit, _value|
-    string += suit_string_chooser(suit, line)
+    string += CARD_ART[suit][line]
   end
 
   string
@@ -203,26 +161,10 @@ def create_card_line7(hand)
   string
 end
 
-def suit_string_chooser(suit, index)
-  case suit
-  when :hearts
-    HEART_CARD[index]
-  when :clubs
-    CLUB_CARD[index]
-  when :diamonds
-    DIAMOND_CARD[index]
-  when :spades
-    SPADE_CARD[index]
-  else
-    UNK_CARD[index]
-  end
-end
-
 def busted?(entity)
   entity[:hand_total] > MAX_HAND
 end
 
-# rubocop:disable Naming/AccessorMethodName
 def get_player_move
   move = ''
 
@@ -240,7 +182,6 @@ def get_player_move
 
   move
 end
-# rubocop:enable Naming/AccessorMethodName
 
 def valid_choice?(string)
   MOVES.include?(string)
@@ -277,11 +218,6 @@ def score_card(card)
   end
 end
 
-# This method mutates the following:
-# - Dealer hand
-# - Dealer hand total
-# This method also uses the deal_card! method, which will mutate the deck.
-
 def dealer_turn!(player, dealer, deck)
   loop do
     display_dealt_cards(player, dealer, 'dealer')
@@ -316,15 +252,6 @@ def display_round_winner(player, dealer)
   end
 end
 
-# This method takes the player and dealer data and determines the win state of
-# the current round.  The return values are as follows:
-# - 1 => Player busted, dealer wins
-# - 2 => Dealer busted, player wins
-# - 3 => Dealer hand total higher, dealer wins
-# - 4 => Player hand total higher, player wins
-# - 5 => Tie
-# This method assumes that players win a tie.
-
 def determine_winner(player, dealer)
   if player[:busted]
     1
@@ -338,10 +265,6 @@ def determine_winner(player, dealer)
     5
   end
 end
-
-# This method will mutate one of the following:
-# - Player score
-# - Dealer score
 
 def score_round!(player, dealer)
   winner = determine_winner(player, dealer)
@@ -360,14 +283,6 @@ end
 def max_score_reached?(player, dealer)
   player == MAX_SCORE || dealer == MAX_SCORE
 end
-
-# This method will mutate the following:
-# - Player hand
-# - Player hand total
-# - Player busted flag
-# - Dealer hand
-# - Dealer hand total
-# - Dealer busted flag
 
 def round_reset!(player, dealer)
   player[:hand] = []
@@ -391,7 +306,6 @@ def display_game_winner(player, dealer)
   prompt("#{winner} wins the game!")
 end
 
-# rubocop:disable Naming/AccessorMethodName
 def get_player_play_again_choice
   answer = ''
 
@@ -407,7 +321,6 @@ def get_player_play_again_choice
 
   answer
 end
-# rubocop:enable Naming/AccessorMethodName
 
 def valid_play_again_response?(string)
   PLAYER_CHOICES.include?(string)
@@ -416,6 +329,7 @@ end
 def play_again?(answer)
   AFFIRMATIVE.include?(answer)
 end
+
 # Main
 
 game_intro
